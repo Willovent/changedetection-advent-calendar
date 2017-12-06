@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+$size: 101;
+@for $i from 0 through 4 {
+    @for $j from 1 through 5 {
+        .sprite-#{$i*5 + $j}-l {
+            background: url('assets/number.jpg') no-repeat -#{($j - 1)*$size}px -#{$i*$size}px;
+            width: $size/2+px;
+            height: $size+px;
+        }
+        .sprite-#{$i*5 + $j}-r {
+            background: url('assets/number.jpg') no-repeat -#{($j - 1)*$size + $size/2}px -#{$i*$size}px;
+            width: $size/2+px;
+            height: $size+px;
+        }
+    }
+}
+
+.cd-tracked:after {
+    content:"";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top:0;
+    pointer-events: none;
+    transition: background-color .5s;
+}
+
+.cd-inprogress:after {
+    background-color: rgba(0, 255, 157, 0.2);
+}

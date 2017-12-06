@@ -1,0 +1,36 @@
+:host {
+    position: relative;
+    >div {
+        background: #c63e3e url("../../../assets/chocolate.png");
+        background-size: 60%;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 101px;
+        height: 101px;
+        &:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        >div {
+            z-index: 0;
+            transition: transform 1s;
+            perspective: 120px;
+            position: absolute;
+            &[data-left] {
+                left: 0;
+                transform-origin: left;
+            }
+            &[data-right] {
+                right: 0;
+                transform-origin: right;
+            }
+        }
+    }
+    .opened {
+        >div {
+            z-index: 2;
+            transform: rotateY(120deg);
+        }
+    }
+}
