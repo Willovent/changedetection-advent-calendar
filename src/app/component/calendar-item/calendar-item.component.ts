@@ -10,7 +10,7 @@ export class CalendarItemComponent implements OnInit {
 
   @Input()
   index: number;
-  opened: boolean;
+  open: boolean;
 
   constructor() { }
 
@@ -18,7 +18,7 @@ export class CalendarItemComponent implements OnInit {
   }
 
   toggleOpened() {
-    this.opened = !this.opened;
+    this.open = !this.open;
   }
 
 }
