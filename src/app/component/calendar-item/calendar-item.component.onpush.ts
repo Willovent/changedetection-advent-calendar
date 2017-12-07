@@ -32,9 +32,4 @@ export class CalendarItemOnPushComponent implements OnInit {
       }, 500);
     });
   }
-
-  toggleOpened() {
-    this.open = !this.open;
-  }
-
 }
