@@ -1,4 +1,4 @@
-<div [class.opened]="open" (click)="toggleOpened($event)">
+<div [class.opened]="open" (click)="open = !open">
   <div [class]="'sprite-'+index+'-l'" data-left></div>
   <div [class]="'sprite-'+index+'-r'" data-right></div>
   {{changeDetection}}
