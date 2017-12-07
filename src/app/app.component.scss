@@ -1,18 +1,25 @@
 .container {
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    width: 505px;
-    box-shadow: 0 0 80px rgba(0,0,0,0.5);
-    border: 1px solid;
-    perspective: 700px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 505px;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);
+  border: 1px solid;
+  perspective: 700px;
 }
-.button{
-  background: #dd4343;
-  cursor: pointer;
-  width:100px;
-  padding: 8px;
-  color:white;
-  margin: 20px;
-  border-radius: 3px;
+.buttons {
+  display: flex;
+  justify-content: center;
+  button {
+    background: #dd4343;
+    cursor: pointer;
+    font-family: sans-serif;
+    box-shadow: none;
+    padding:  8px 16px;
+    color: white;
+    outline:none;
+    margin: 20px;
+    border:none;
+    border-radius: 3px;
+  }
 }

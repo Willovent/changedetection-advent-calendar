@@ -1,4 +1,12 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy, AfterViewChecked, ElementRef, NgZone } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  ChangeDetectionStrategy,
+  AfterViewChecked,
+  ElementRef,
+  NgZone
+} from '@angular/core';
 
 @Component({
   selector: 'app-calendar-item-onpush',
@@ -7,20 +15,21 @@ import { Component, OnInit, Input, ChangeDetectionStrategy, AfterViewChecked, El
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CalendarItemOnPushComponent implements OnInit {
-
-  @Input()
-  index: number;
+  @Input() index: number;
   open: boolean;
 
+  @Input() displayChange: boolean;
+
   get changeDetection() {
-    this.showChangeDection();
+    if (this.displayChange) {
+      this.showChangeDection();
+    }
     return '';
   }
 
-  constructor(private zone: NgZone, private elementRef: ElementRef) { }
+  constructor(private zone: NgZone, private elementRef: ElementRef) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   showChangeDection() {
     const element = this.elementRef.nativeElement;
