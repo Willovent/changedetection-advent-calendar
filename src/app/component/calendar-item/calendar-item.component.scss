@@ -15,8 +15,6 @@
         >div {
             z-index: 0;
             transition: transform 1s, z-index 1s, box-shadow .5s;
-            perspective: 1px;
-            perspective-origin: 150% 150%;
             transform-style: preserve-3d;
             position: absolute;
             &[data-left] {
@@ -32,9 +30,18 @@
     .opened {
         >div {
             z-index: 2;
-            transform: rotateY(110deg) translateY(-1px);
             box-shadow: 0 0 80px rgba(0, 0, 0, 0.5), inset 0 0 5px;
             transition: transform 1s, z-index 1s, box-shadow .7s .3s;
+            &[data-left] {
+                left: 0;
+                transform: rotateY(-110deg) translateY(-1px);
+                transform-origin: left;
+            }
+            &[data-right] {
+                right: 0;
+                transform: rotateY(110deg) translateY(-1px);
+                transform-origin: right;
+            }
         }
     }
 }
