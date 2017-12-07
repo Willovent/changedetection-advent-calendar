@@ -3,15 +3,17 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { CalendarItemComponent } from './component/calendar-item/calendar-item.component';
+import { CalendarItemOnPushComponent } from './component/calendar-item/calendar-item.component.onpush';
 import { ChangeDetectionDirective } from './directive/change-detection.directive';
+import { CalendarItemDefaultComponent } from './component/calendar-item/calendar-item.component.default';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CalendarItemComponent,
-    ChangeDetectionDirective
+    CalendarItemOnPushComponent,
+    ChangeDetectionDirective,
+    CalendarItemDefaultComponent
   ],
   imports: [
     BrowserModule

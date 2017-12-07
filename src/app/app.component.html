@@ -1,5 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="container">
-  <app-calendar-item appChangeDetection *ngFor="let i of indexes"  [index]="i"></app-calendar-item>
-</div>
+<div class="button" (click)="useOnPush=!useOnPush">{{useOnPush?'OnPush':'Default'}}</div>
 
+<div class="container">
+  <ng-container *ngIf="useOnPush;else default">
+    <app-calendar-item-onpush *ngFor="let i of indexes" [index]="i" class="cd-tracked"></app-calendar-item-onpush>
+  </ng-container>
+  <ng-template #default>
+    <app-calendar-item-default *ngFor="let i of indexes" [index]="i" class="cd-tracked"></app-calendar-item-default>
+  </ng-template>
+</div>

@@ -4,12 +4,12 @@ $size: 101;
     @for $j from 1 through 5 {
         .sprite-#{$i*5 + $j}-l {
             background: url('assets/number.jpg') no-repeat -#{($j - 1)*$size}px -#{$i*$size}px;
-            width: $size/2+px;
+            width: 51px;
             height: $size+px;
         }
         .sprite-#{$i*5 + $j}-r {
             background: url('assets/number.jpg') no-repeat -#{($j - 1)*$size + $size/2}px -#{$i*$size}px;
-            width: $size/2+px;
+            width: 50px;
             height: $size+px;
         }
     }
