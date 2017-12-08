@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +6,17 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
   useOnPush = false;
   showChangeDetection = false;
-  indexes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
+  days = [];
+
+  ngOnInit(): void {
+    this.days = new Array(25).fill(0).map((x, i) => ({ index: i + 1, open: false }));
+  }
+
+  openDay(day: number) {
+    this.days.find(x => x.index === day).open = true;
+  }
 }

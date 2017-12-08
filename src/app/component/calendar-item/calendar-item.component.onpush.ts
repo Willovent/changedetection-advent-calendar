@@ -16,7 +16,7 @@ import {
 })
 export class CalendarItemOnPushComponent implements OnInit {
   @Input() index: number;
-  open: boolean;
+  @Input() open: boolean;
 
   @Input() displayChange: boolean;
 
