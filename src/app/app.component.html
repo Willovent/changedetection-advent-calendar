@@ -2,16 +2,16 @@
 <div class="buttons">
   <button (click)="useOnPush=!useOnPush">{{useOnPush?'OnPush':'Default'}}</button>
   <button (click)="showChangeDetection=!showChangeDetection">{{showChangeDetection?'Hide changes':'Show changes'}}</button>
-  <button (click)="detectChange()">Detect Changes</button>
+  <button (click)="toggleDayImmu(days[3])">Toggle day 3</button>
 </div>
 
 <div class="container">
   <ng-container *ngIf="useOnPush;else default">
-    <app-calendar-item-onpush *ngFor="let day of days" [open]="day.open" [index]="day.index" [displayChange]="showChangeDetection" (click)="day.open = !day.open"
+    <app-calendar-item-onpush *ngFor="let day of days" [day]="day.input" [displayChange]="showChangeDetection" (click)="toggleDay(day)"
       class="cd-tracked"></app-calendar-item-onpush>
   </ng-container>
   <ng-template #default>
-    <app-calendar-item-default *ngFor="let day of days" [open]="day.open" [index]="day.index" [displayChange]="showChangeDetection" (click)="day.open = !day.open"
+    <app-calendar-item-default *ngFor="let day of days" [day]="day.input" [displayChange]="showChangeDetection" (click)="toggleDay(day)"
       class="cd-tracked"></app-calendar-item-default>
   </ng-template>
 </div>

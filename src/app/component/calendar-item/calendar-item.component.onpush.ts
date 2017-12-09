@@ -15,8 +15,10 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CalendarItemOnPushComponent implements OnInit {
-  @Input() index: number;
-  @Input() open: boolean;
+  @Input() day: {
+    index: number,
+    open: boolean
+  };
 
   @Input() displayChange: boolean;
 

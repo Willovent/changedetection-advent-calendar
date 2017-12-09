@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, ChangeDetectorRef, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -12,20 +12,15 @@ export class AppComponent implements OnInit {
   showChangeDetection = false;
   days = [];
 
-  constructor(private detector: ChangeDetectorRef) {
-    this.detector.detach();
-  }
-
   ngOnInit(): void {
-    this.days = new Array(25).fill(0).map((x, i) => ({ index: i + 1, open: false }));
-    this.detector.detectChanges();
+    this.days = new Array(25).fill(0).map((x, i) => ({ input: { index: i + 1, open: false } }));
   }
 
-  detectChange() {
-    this.detector.detectChanges();
+  toggleDay(day) {
+    day.input.open = !day.input.open;
   }
 
-  openDay(day: number) {
-    this.days.find(x => x.index === day).open = true;
+  toggleDayImmu(day) {
+    day.input = Object.assign({}, day.input, { open: !day.input.open });
   }
 }
